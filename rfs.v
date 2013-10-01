@@ -1,13 +1,16 @@
-module rf2d
+// Register Files
+`include "params.v"
+
+module shift2drf
 (
-	input				clk,
-	input		[179:0]	data,
+	input											clk,
+	input			`SHIFT_RF_2D_ROW_WORD	data,
 	
-	input				reset,
-	input				colShift,
-	input				rowShift,
+	input											reset,
+	input											colShift,
+	input											rowShift,
 	
-	output	[9:0]	res
+	output reg	`SHIFT_RF_2D_ROW_WORD	rf	[`SHIFT_RF_2D_ROW-1 : 0]
 
 );
 
@@ -17,12 +20,8 @@ parameter numBits	= 10;
 
 localparam rowSize = numCol*numBits;
 
-
-reg	[numCol*numBits-1 : 0]	rf	[numRow-1 : 0];
-
 genvar i;
 integer j;
-
 
 generate
 	for (i = 0; i < numRow; i = i+1)	begin: a
@@ -46,26 +45,6 @@ generate
 		end
 	end	
 endgenerate
-/*
-genvar k;
-generate
-	for (k = 0; k < rowSize; k = k+1)	begin: c
-		always @(posedge clk) begin
-			if (reset) begin
-				rf[numRow-1] <= 'b0;
-			end
-			else if (colShift) begin
-				rf[numRow-1][k] <= rf[numRow-1][(k+numBits)%rowSize];
-			end
-			else if (rowShift) begin
-				rf[numRow-1] <= data;
-			end
-		end
-	end
-endgenerate
-*/
-
-assign res = rf[0][numBits-1:0];
 
 
 endmodule

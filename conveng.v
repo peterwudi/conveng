@@ -1,17 +1,19 @@
+`include "params.v"
 
 module conveng
 (
-	input				clk,
-	input				reset,
-	input		[179:0]	data,
-	input				colShift,
-	input				rowShift,
+	input										clk,
+	input										reset,
+	input		`SHIFT_RF_2D_ROW_WORD	data,
+	input										colShift,
+	input										rowShift,
 
-	output	[9:0]	res
+	output	`SHIFT_RF_2D_ROW_WORD	res	[`SHIFT_RF_2D_ROW-1 : 0]
 );
 
-rf2d	#(.numCol(18), .numRow(16), .numBits(10)) 
-rf2d
+
+shift2drf	#(.numCol(`SHIFT_RF_2D_COL), .numRow(`SHIFT_RF_2D_ROW), .numBits(`DATA_WIDTH)) 
+shift2drf
 (
 	.clk			(clk),
 	.data			(data),
@@ -20,7 +22,7 @@ rf2d
 	.colShift	(colShift),
 	.rowShift	(rowShift),
 	
-	.res			(res)
+	.rf			(res)
 );
 
 

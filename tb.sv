@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+`include "params.v"
 
 module tb();
 
@@ -8,7 +9,7 @@ logic		[179:0]	data;
 logic					colShift;
 logic					rowShift;
 
-logic		[9:0]		res;
+logic		`SHIFT_RF_2D_ROW_WORD	res	[`SHIFT_RF_2D_ROW-1 : 0];
 
 logic signed	[34:0]	data_o;
 

@@ -225,6 +225,13 @@ pip-log.txt
 *.pdf
 *.bak
 *.rpt
+*.done
+*.smsg
+*.summary
+*.jdi
+*.pin
+*.sof
+
 
 
 # Build results
