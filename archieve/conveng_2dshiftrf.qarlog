@@ -1,0 +1,19 @@
+Quartus II Archive log --	E:/University of Toronto/masters/conveng/conveng_2dshiftrf.qarlog
+
+Archive:	E:/University of Toronto/masters/conveng/conveng_2dshiftrf.qar
+Date:		Mon Sep 30 21:58:06 2013
+Quartus II 64-Bit		13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+
+	=========== Files Selected: ===========
+E:/University of Toronto/masters/conveng/alu.v
+E:/University of Toronto/masters/conveng/conveng.qpf
+E:/University of Toronto/masters/conveng/conveng.qsf
+E:/University of Toronto/masters/conveng/conveng.v
+E:/University of Toronto/masters/conveng/incremental_db/compiled_partitions/conveng.db_info
+E:/University of Toronto/masters/conveng/rf2d.v
+E:/University of Toronto/masters/conveng/tb.sv
+d:/altera/13.0sp1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 8 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
